@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&family=Poppins:wght@100;200;300;400;500;600;800&family=Work+Sans:wght@100;200;300;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&family=Poppins:wght@100;200;300;400;500;600;800&family=Roboto:ital@1&family=Work+Sans:wght@100;200;300;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <!-- bootstrap 5 css cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="" href="/assets/fonts/segoesc.ttf">
+
+    <!-- slick slider start  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- slick slider end -->
+    <!-- custom JS -->
+    <script src="/assets/js/main.js"></script>
+    <title>Bangladesh Railway Police</title>
+    <style>
+
+    </style>
+    <style>
+        .lightbox {
+            background-color: fade(black, 80%);
+            overflow: scroll;
+            position: fixed;
+            display: none;
+            z-index: 1;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+
+            &-container {
+                position: relative;
+                max-width: 960px;
+                margin: 7% auto;
+                display: block;
+                padding: 0 3%;
+                height: auto;
+                z-index: 10;
+
+                /* // Increasing top margin for mobile */
+                @media screen and (max-width: 768px) {
+                    margin-top: 10%;
+                }
+
+                @media screen and (max-width: 414px) {
+                    margin-top: 13%;
+                }
+            }
+
+            &-content {
+                box-shadow: 0 1px 6px fade(black, 70%);
+            }
+
+            &-close {
+                text-transform: uppercase;
+                background: transparent;
+                position: absolute;
+                font-weight: 300;
+                font-size: 12px;
+                display: block;
+                border: none;
+                color: white;
+                top: -22px;
+                right: 3%;
+            }
+        }
+
+        .video-container {
+            padding-bottom: 56.25%;
+            position: relative;
+            padding-top: 30px;
+            overflow: hidden;
+            height: 0;
+        }
+
+        .video-container iframe,
+        .video-container object,
+        .video-container embed {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        /* IGNORE FORM THIS POINT ON */
+
+        #container {
+            border-radius: 4px;
+            max-width: 300px;
+            height: auto;
+            padding: 50px;
+            background: white;
+            margin: 100px auto;
+        }
+
+        #playme {
+            /* background: #007fed; */
+            background: transparent;
+            text-transform: uppercase;
+            font-weight: 300;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            display: inline-block;
+            font-size: 14px;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" style="background-image: url(./assets/images/lightbox-img.png);">
+        <center>
+            <p class="text-white">Video</p>
+            <h3 class="text-white">Father of the Nation
+                Bangabandhu Sheikh Mujibur Rahman</h3>
+            <button id="playme" onclick="revealVideo('video','youtube')"><i
+                    class="fa-regular fa-circle-play fs-1 text-white"></i></button>
+        </center>
+    </div>
+
+    <div id="video" class="lightbox" onclick="hideVideo('video','youtube')">
+        <div class="lightbox-container">
+            <div class="lightbox-content">
+
+                <button onclick="hideVideo('video','youtube')" class="lightbox-close">
+                    Close | ✕
+                </button>
+                <div class="video-container">
+                    <iframe id="youtube" width="560" height="615"
+                        src="https://www.youtube.com/embed/Wh0q8vdH-ro?si=9uHuSp02EK005Hfc" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function to reveal lightbox and adding YouTube autoplay
+        function revealVideo(div, video_id) {
+            var video = document.getElementById(video_id).src;
+            document.getElementById(video_id).src = video + '&autoplay=1'; // adding autoplay to the URL
+            document.getElementById(div).style.display = 'block';
+        }
+
+        // Hiding the lightbox and removing YouTube autoplay
+        function hideVideo(div, video_id) {
+            var video = document.getElementById(video_id).src;
+            var cleaned = video.replace('&autoplay=1', ''); // removing autoplay form url
+            document.getElementById(video_id).src = cleaned;
+            document.getElementById(div).style.display = 'none';
+        }
+    </script>
+    <!-- top bar -->
+    <div class="container-fluid border border-bottom">
+        <div class="container">
+            <div class="row py-3 top-location">
+                <div class="col-sm-6 col-md-11 col-lg-11">
+                    <p> <i class="fa-solid fa-location-dot icon"></i> Head Quarter : House# 12/C, Road#
+                        105, Gulshan- 2, Dhaka,
+                        Bangladesh</p>
+                </div>
+                <div class="col-sm-6 col-md-1 col-lg-1">
+                    <div class="text-sm-end">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" style="color: #666;">
+                                Eng
+                            </a>
+
+                            <ul class="dropdown-menu ms-lg-4">
+                                <li><a class="dropdown-item" href="#">Bengali</a></li>
+                                <li><a class="dropdown-item" href="#">English</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- mibble bar -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row py-2">
+                <div class="col-8 col-md-10 col-lg-10 d-flex align-items-center">
+                    <div class="d-flex">
+                        <div class="main-logo"> <a href="/"><img src="../assets/images/railwayPolice-logo.png"
+                                    class="img-fluid" alt="Railway Police" style="width: 37px; height: 48px;"></a>
+                        </div>
+                        <div class="bd-railway-police-title d-flex align-items-center ms-2">
+                            <h1>বাংলাদেশ রেলওয়ে পুলিশ</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-md-2 col-lg-2">
+                    <div class="text-sm-end">
+                        <img src="../assets/images/mojib.png" class="img-fluid" alt="mojib">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- navbar start -->
+    <div class="container-fluid sticky-top" style="background-color: #0B1284;">
+        <div class="container">
+            <div class="row">
+                <div class="d-flex justify-content-between">
+                    <div class="col-7 col-md-9 col-lg-10">
+                        <div class="main-navbar-middle">
+                            <nav class="navbar navbar-expand-lg">
+                                <div class="container-fluid px-0">
+                                    <button class="navbar-toggler border border-3 border-light" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                                        aria-controls="navbarNavDropdown" aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        <span><i class="fa-solid fa-bars" style="color: #ffffff;"></i></span>
+                                    </button>
+
+                                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link" href="#">
+                                                    Home
+                                                </a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    About Us
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                    <li>
+                                                        <a class="dropdown-item" href="/pages/about-us.html">
+                                                            About Us
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Human Rights
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">
+                                                            Action
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link" href="#">
+                                                    Citizen Charter
+                                                </a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    DIGs
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">
+                                                            Action
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link" href="#">
+                                                    Sacrifice in Action
+                                                </a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link" href="#">
+                                                    NOX & Notice
+                                                </a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link" href="#">
+                                                    Circular
+                                                </a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link" href="/pages/contact-us.html">
+                                                    Contact Us
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-5 col-md-3 col-lg-2 d-flex justify-content-sm-end justify-content-center mt-3">
+                        <div class="phone-and-call">
+                            <span>
+                                <FiPhoneCall class="fa-solid fa-phone-volume" /> (099) 888-0000
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- navbar end -->
+    <!-- carousel start -->
+    <div class="container-fluid px-0 ">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <!-- <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div> -->
+            <div class="carousel-inner">
+                <div class="carousel-item active slider-zoomIn">
+                    <figure class=""><img src="./assets/images/carousel-slider-1.png"
+                            class="d-block w-100 img-fluid slider-images" alt="..."></figure>
+                    <div class="">
+                        <div class="carousel-caption carousel-title">
+                            <h5 class="carousel-title-1">Welcome to shopery</h5>
+                            <h2 class="carousel-title-1">পুলিশ সপ্তাহ ২০২৩</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item slider-zoomIn">
+                    <figure><img src="./assets/images/railway-police-2.jpg"
+                            class="d-block w-100 img-fluid slider-images" alt="...">
+                    </figure>
+                    <div class="">
+                        <div class="carousel-caption carousel-title">
+                            <h5 class="carousel-title-1">Welcome to shopery</h5>
+                            <h2 class="carousel-title-1">পুলিশ সপ্তাহ ২০২৩</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item slider-zoomIn">
+                    <figure><img src="./assets/images/image-16.png" class="d-block w-100 slider-images img-fluid"
+                            alt="...">
+                    </figure>
+                    <div class="">
+                        <div class="carousel-caption carousel-title">
+                            <h5 class="carousel-title-1">Welcome to shopery</h5>
+                            <h2 class="carousel-title-1">পুলিশ সপ্তাহ ২০২৩</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span aria-hidden="true"><i class="fa-solid fa-circle-arrow-left fs-2"
+                        style="color: #ffffff;"></i></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span aria-hidden="true"><i class="fa-solid fa-circle-arrow-right fs-2"
+                        style="color: #ffffff;"></i></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- carousel end -->
+    <!-- about bd-railway-police start -->
+    <div class="container-fluid" style="background-color: #EDF2EE;">
+        <div class="container">
+            <div class="row py-5 reveal fade-bottom">
+                <div class="col-md-3 col-sm-6 col-lg-4 border border-5 border-danger pt-4 about-bd-railway-img">
+                    <div class="about-bd-railway-img-2 reveal fade-left zoomIn">
+                        <figure> <img src="./assets/images/DSC_0802 2.png" class="img-fluid py-2" /></figure>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-6 col-lg-8 about-bd-railway-police">
+                    <h2 class="about-bd-railway-police-title">About Bangladesh Railway Police</h2>
+                    <div class="card p-4 about-bd-railway-card">
+                        <p>Prevention and detection of crime committed against passengers traveling by train
+                            and their properties and also maintenance of law and order in the railway premises are the
+                            direct
+                            responsibilities of the Railway Police working under the control of National Police
+                            Headquarters as well as Ministry of Home Affairs. The general duties of the staff and
+                            jurisdiction of railway police have been enumerated in the Police Regulation of Bengal 1943.
+                            <br /> Railway Police has two ranges, Chittagong Railway Police and Saidpur Railway
+                            Police. The
+                            force is led by a Deputy Inspector General of Bangladesh Police.[3] The Railway Police, as
+                            of 2013, had 1600 personnel.[4] In 2014, the Government of Bangladesh announced plans to
+                            expand the railway force.[5] On 11 July 2016, a 65 year old veteran of Bangladesh Liberation
+                            war was beaten to death by members of Railway Police in Jamalpur Railway Police Station.[
+                            <br /> Railway Police has two ranges, Chittagong Railway Police and Saidpur Railway
+                            Police. The
+                            force is led by a Deputy Inspector General of Bangladesh Police.[3] The Railway Police, as
+                            of 2013, had 1600 personnel.[4] In 2014, the Government of Bangladesh announced plans to
+                            expand the railway force.[5] On 11 July 2016, a 65 year old veteran of Bangladesh Liberation
+                            war was beaten to death by members of Railway Police in Jamalpur Railway Police Station.[
+
+                            <br /> In 2019, the Officer in Charge of Khulna Railway Police Station and other
+                            officers were
+                            accused of rap..
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about bd-railway-police end -->
+    <!-- feature start -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row py-5 reveal fade-bottom">
+                <div class="col-sm-6 col-md-4 col-lg-4 py-2">
+                    <div class="card bg-feature-img-1 shadow-sm rounded reveal fade-left">
+                        <div class="card-body py-5">
+                            <h2 class="card-title">Emergency Help</h2>
+                            <h2 class="card-title">Call 999</h2>
+                            <a href="#" class="btn px-4 py-2 mt-3">Call Us <i
+                                    class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 py-2">
+                    <div class="card bg-feature-img-3 shadow-sm rounded">
+                        <div class="card-body py-md-2 py-sm-5 py-xl-5">
+                            <h2 class="card-title-update mt-5">Railway new Update</h2>
+                            <a href="#" class="btn px-4 py-2 mt-3">Call Us <i
+                                    class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 py-2">
+                    <div class="card bg-feature-img-2 shadow-sm rounded reveal fade-right">
+                        <div class="card-body py-5">
+                            <p>100% Organic</p>
+                            <h2 class="card-title-component">Any</h2>
+                            <h2 class="card-title-component">complaint</h2>
+                            <a href="#" class="btn px-4 py-2 mt-1">Call Us <i
+                                    class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- feature end -->
+    <!-- message start -->
+    <div class="container-fluid py-5" style="background-color: #EDF2EE;">
+        <div class="container">
+            <div class="row igp-message reveal fade-bottom">
+                <div class="col-sm-6 col-md-8 col-lg-8">
+                    <h4>Message from IGP<br />
+                        Chowdhury Abdullah Al-Mamun BPM (Bar), PPM</h4>
+                    <p>I am immensely pleased to heartily welcome all to the webpage of Bangladesh police.
+                        Originally created to serve the interests of the colonial authority of the far past, Bangladesh
+                        Police, now imbued with the spirit of freedom and independence, has come through a paradigm
+                        shift and become the symbol of rule of law. The dawn of this new journey was our great war of
+                        liberation when, in response to the clarion call of Bangabandhu, father of the nation, the
+                        undaunted members of this force chose to be the vanguards of a life-staking armed resistance
+                        against the brutal aggression to our beloved motherland. Since then we have been changing
+                        everyday in every ways and today policing here is pro-people, proactive, community-oriented,
+                        technology based and sensitized to issues regarding human rights, gender and children.
+                        Particularly, in the last four and a half years Bangladesh police has undergone radical changes
+                        in terms of professional amelioration, capacity building and service delivery, thanks to the
+                        personal and initiatives of the Honorable prime Minister in this regard.
+                        Today we are fully committed to upholding the rule of law and ensuring a society safe for all to
+                        live and work, pray and play, and for the democracy to prosper and flourish.
+                        We are for the community. So our focus is on building stronger trust with the community, and we
+                        consider the responsible members of the community our most potential weapons in the battle
+                        against all sorts of chaos and criminality.
+                        I believe Bangladesh police Webpage will open up a new avenue for us to reach our goal. I wish
+                        this webpage a grand success</p>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 p-4">
+                    <div class="style-border">
+                        <div class="zoomIn">
+                            <figure><img src="./assets/images/image-15.png" class="img-fluid px-4" /></figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- message end -->
+    <!-- police activites start -->
+    <section class="police-activites py-4" style="background-color: #EDF2EE;">
+        <div class="container">
+            <div class="row reveal fade-bottom">
+                <div class="police-activites-title py-1">Police Activites</div>
+                <div class="col-sm-6 col-md-4 col-lg-4 py-2">
+                    <div class="card-container">
+                        <div class="card p-3 shadow-sm police-activites-card reveal fade-left">
+                            <img src="./assets/images/image-17.png" class="img-fluid card-img-top image" alt="...">
+                            <div class="card-body">
+                                <div class="overlay-top-bottom"></div>
+                                <h5 class="police-activites-card-title p-2">Crime Management</h5>
+                                <ul>
+                                    <li> Collecting intelligence </li>
+                                    <li>Response to crime Incidents</li>
+                                    <li>Investigation</li>
+                                    <li>Verification</li>
+                                    <li>Public Order Management</li>
+                                    <li>Traffic Management</li>
+                                    <li>Assisting Prosecution</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 py-2">
+                    <div class="card-container">
+                        <div class="card p-3 shadow-sm police-activites-card">
+                            <img src="./assets/images/image-17.png" class="img-fluid card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="overlay-top-bottom"></div>
+                                <h5 class="police-activites-card-title p-2">Internal Security</h5>
+                                <ul>
+                                    <li> Security Patrols </li>
+                                    <li>Security Watchdog</li>
+                                    <li>VVIP Security</li>
+                                    <li>Verification</li>
+                                    <li>KPI Security</li>
+                                    <li>Security at National Occasions (Religious festival, Fair, Ijtema, Pahela
+                                        Baishakh
+                                        etc.)</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 py-2">
+                    <div class="card-container">
+                        <div class="card p-3 shadow-sm police-activites-card reveal fade-right">
+                            <div class="overlay-top-bottom"></div>
+                            <img src="./assets/images/image-17.png" class="img-fluid card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="police-activites-card-title p-2">Social Integration</h5>
+                                <ul>
+                                    <li>Raising Awareness (Through Training, Rally, Exhibition, Media Coverage, Visiting
+                                        schools etc.)</li>
+                                    <li>Community Policing</li>
+                                    <li>Humanitarian Efforts (Winter cloth distribution, helping disaster victims etc)
+                                    </li>
+                                    <li> Participation in the Social Events (Being partner in Events like fair,
+                                        assistance
+                                        etc.)</li>
+                                    <li>Observing Open House Day</li>
+                                    <li>Blood Donation</li>
+                                    <li>Victim Support Center</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- police activites end -->
+    <!-- our history start -->
+    <div class="container-fluid py-4">
+        <div class="container">
+            <div class="row reveal fade-bottom">
+                <div class="our-history-title py-1">What Our history</div>
+                <div class="col-sm-6 col-md-4 col-lg-4 py-2 reveal fade-left">
+                    <div class="card-container">
+                        <div class="zoomIn">
+                            <figure><img src="./assets/images/image-9.png" class="img-fluid card-img-top" alt="...">
+                            </figure>
+                            <div class="card p-1 shadow-sm our-history-card mt-2">
+                                <div class="overlay-top-bottom"></div>
+                                <div class="card-body">
+                                    <p>“Nam sed odio diam. Mauris sagittis sapien sed convallis cursus. Proin mattis
+                                        ultrices
+                                        urna ac eleifend. Cras vel nisi nec lectus sagittis venenatis. Curabitur laoreet
+                                        leo
+                                        sed
+                                        lorem pulvina”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 py-2">
+                    <div class="card-container">
+                        <div class="zoomIn">
+                            <figure><img src="./assets/images/image-10.png" class="img-fluid card-img-top" alt="...">
+                            </figure>
+                            <div class="card p-1 shadow-sm our-history-card mt-2">
+                                <div class="overlay-top-bottom"></div>
+                                <div class="card-body">
+                                    <p>“Nam sed odio diam. Mauris sagittis sapien sed convallis cursus. Proin mattis
+                                        ultrices
+                                        urna ac eleifend. Cras vel nisi nec lectus sagittis venenatis. Curabitur laoreet
+                                        leo
+                                        sed
+                                        lorem pulvina”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 py-2 reveal fade-left">
+                    <div class="card-container">
+                        <div class="zoomIn">
+                            <figure> <img src="./assets/images/image-11.png" class="img-fluid card-img-top" alt="...">
+                            </figure>
+                            <div class="card p-1 shadow-sm our-history-card mt-2">
+                                <div class="overlay-top-bottom"></div>
+                                <div class="card-body">
+                                    <p>“Nam sed odio diam. Mauris sagittis sapien sed convallis cursus. Proin mattis
+                                        ultrices
+                                        urna ac eleifend. Cras vel nisi nec lectus sagittis venenatis. Curabitur laoreet
+                                        leo
+                                        sed
+                                        lorem pulvina”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- our history end -->
+    <!-- video start -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row reveal fade-bottom">
+                <iframe width="560" height="615" src="https://www.youtube.com/embed/Wh0q8vdH-ro?si=9uHuSp02EK005Hfc"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- video  end -->
+    <!-- latest news start -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="our-history-title pt-5">Latest News</div>
+            <div class="row py-2 reveal fade-bottom latest-news-slider">
+                <div class="col-sm-6 col-md-4 col-lg-4 p-2">
+                    <div class="card-container">
+                        <div class="card p-3 shadow latest-news-card border-0 reveal fade-left zoomIn">
+                            <figure><img src="./assets/images/Image-12.png" class="img-fluid card-img-top" alt="...">
+                            </figure>
+                            <div class="card-body">
+                                <h5 class="card-title">২০২৩-২০২৪ অর্থবছরের বার্ষিক কর্মসম্পাদন চুক্তি (এপিএ) স্বাক্ষর
+                                </h5>
+                                <p>অদ্য ২০/০৬/২০২৩ খ্রি. পুলিশ হেডকোয়ার্টার্সে ইন্সপেক্টর জেনারেল অব পুলিশ, বাংলাদেশ
+                                    জনাব
+                                    চৌধুরী আবদুল্লাহ আল-মামুন বিপিএম (বার), পিপিএম মহোদয়ের সাথে ২০২৩-২০২৪ অর্থবছরের
+                                    বার্ষিক
+                                    কর্মসম্পাদন চুক্তি (এপিএ) স্বাক্ষর করেন রেলওয়ে পুলিশের অতিরিক্ত আইজি জনাব মোঃ দিদার
+                                    আহম্মদ, বিপিএম, পিপিএম-সেবা মহোদয়।</p>
+                                <a href="#" class="btn px-4 py-2 mt-3">Read More <i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 p-2">
+                    <div class="card-container">
+                        <div class="card p-3 shadow latest-news-card border-0 zoomIn">
+                            <figure><img src="./assets/images/Image-13.png" class="img-fluid card-img-top" alt="...">
+                            </figure>
+                            <div class="card-body">
+                                <h5 class="card-title">রেলওয়ে পুলিশে কর্মরত ডিআইজি (চলতি দায়িত্বে) জনাব মোঃ শাহ আলম
+                                    মহোদয়
+                                    পদোন্নতি</h5>
+                                <p>রেলওয়ে পুলিশে কর্মরত ডিআইজি (চলতি দায়িত্বে) জনাব মোঃ শাহ আলম মহোদয় পদোন্নতি পাওয়ায়
+                                    তাঁকে
+                                    ফুলেল শুভেচ্ছা জানান জনাব মোঃ দিদার আহম্মদ, বিপিএম, পিপিএম-সেবা, অতিরিক্ত আইজি,
+                                    রেলওয়ে
+                                    পুলিশ মহোদয়। এ সময় রেলওয়ে পুলিশে কর্মরত অন্যান্য কর্মকর্তাগণ উপস্থিত ছিলেন।</p>
+                                <a href="#" class="btn px-4 py-2 mt-3">Read More <i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 p-2">
+                    <div class="card-container">
+                        <div class="card p-3 shadow latest-news-card border-0 reveal fade-right zoomIn">
+                            <figure><img src="./assets/images/Image-14.png" class="img-fluid card-img-top" alt="...">
+                            </figure>
+                            <div class="card-body">
+                                <h5 class="card-title">নবনিযুক্ত ইন্সপেক্টর জেনারেল অব পুলিশ.</h5>
+                                <p class="">নবনিযুক্ত ইন্সপেক্টর জেনারেল অব পুলিশ, বাংলাদেশ জনাব চৌধুরী আবদুল্লাহ
+                                    আল-মামুন
+                                    বিপিএম
+                                    (বার), পিপিএম মহোদয়কে জনাব মোঃ দিদার আহম্মদ, বিপিএম, পিপিএম-সেবা, অতিরিক্ত আইজি,
+                                    রেলওয়ে
+                                    পুলিশ মহোদয় ফুলেল শুভেচ্ছা জানান।</p>
+                                <a href="#" class="btn px-4 py-2 mt-3">Read More <i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 p-2">
+                    <div class="card-container">
+                        <div class="card p-3 shadow latest-news-card border-0 reveal fade-right zoomIn">
+                            <figure><img src="./assets/images/Image-14.png" class="img-fluid card-img-top" alt="...">
+                            </figure>
+                            <div class="card-body">
+                                <h5 class="card-title">নবনিযুক্ত ইন্সপেক্টর জেনারেল অব পুলিশ.</h5>
+                                <p class="">নবনিযুক্ত ইন্সপেক্টর জেনারেল অব পুলিশ, বাংলাদেশ জনাব চৌধুরী আবদুল্লাহ
+                                    আল-মামুন
+                                    বিপিএম
+                                    (বার), পিপিএম মহোদয়কে জনাব মোঃ দিদার আহম্মদ, বিপিএম, পিপিএম-সেবা, অতিরিক্ত আইজি,
+                                    রেলওয়ে
+                                    পুলিশ মহোদয় ফুলেল শুভেচ্ছা জানান।</p>
+                                <a href="#" class="btn px-4 py-2 mt-3">Read More <i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- latest news end -->
+    <!-- notice start -->
+    <div class="container-fluid mt-5">
+        <div class="container">
+            <div class="row notice reveal fade-bottom">
+                <div class="col-sm-6 col-md-8 col-lg-8 py-2">
+                    <div class="card shadow-sm notice-card">
+                        <h2 class="ps-3">Notices</h2>
+                        <div class="ps-3 notice-titles">
+                            <h6>Craig Bator - 27 Dec 2020</h6>
+                            <h4>Convocation Registration Notice - 2023</h4>
+                        </div>
+                        <div class="ps-3 notice-titles">
+                            <h6>Craig Bator - 27 Dec 2020</h6>
+                            <h4>Convocation Registration Notice - 2023</h4>
+                        </div>
+                        <div class="ps-3 notice-titles">
+                            <h6>Craig Bator - 27 Dec 2020</h6>
+                            <h4>Convocation Registration Notice - 2023</h4>
+                        </div>
+                        <div class="ps-3 notice-titles">
+                            <h6>Craig Bator - 27 Dec 2020</h6>
+                            <h4>Convocation Registration Notice - 2023</h4>
+                        </div>
+                        <div class="ps-3 notice-titles">
+                            <h6>Craig Bator - 27 Dec 2020</h6>
+                            <h4>Convocation Registration Notice - 2023</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 py-2">
+                    <div class="card shadow-sm notice-card zoomIn">
+                        <figure><img src="./assets/images/image-36.png" class="img-fluid pb-1" alt="image"
+                                style="max-height: 27rem;" /></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- notice end -->
+    <!-- important links start -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row important-links py-3 reveal fade-bottom">
+                <h2 class="important-links-title py-3">Important Links</h2>
+                <div class="card shadow-sm p-3">
+                    <div
+                        class="d-md-flex d-sm-inline-flex justify-content-between important-links-slider d-inline-block text-align-center">
+                        <div class="">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/images/image-35.png">
+                            </div>
+                            <div class="d-flex justify-content-center pt-2 text-white contact-info">
+                                <p>Bangladesh Railway </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/images/image-30.png">
+                            </div>
+                            <div class="d-flex justify-content-center pt-2 text-white contact-info">
+                                <p>Bangladesh Railway </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/images/image-31.png">
+                            </div>
+                            <div class="d-flex justify-content-center pt-2 text-white contact-info">
+                                <p>Bangladesh National<br /> Portal </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/images/image-32.png">
+                            </div>
+                            <div class="d-flex justify-content-center pt-2 text-white contact-info">
+                                <p>Bangladesh Police </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/images/image-33.png">
+                            </div>
+                            <div class="d-flex justify-content-center pt-2 text-white contact-info">
+                                <p>INTERPOL </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/images/image-34.png">
+                            </div>
+                            <div class="d-flex justify-content-center pt-2 text-white contact-info">
+                                <p>Rapid Action Battalian,<br /> Bangladesh </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/images/image-30.png">
+                            </div>
+                            <div class="d-flex justify-content-center pt-2 text-white contact-info">
+                                <p>Bangladesh Railway </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/images/image-31.png">
+                            </div>
+                            <div class="d-flex justify-content-center pt-2 text-white contact-info">
+                                <p>Bangladesh National<br /> Portal </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/images/image-32.png">
+                            </div>
+                            <div class="d-flex justify-content-center pt-2 text-white contact-info">
+                                <p>Bangladesh Police </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/images/image-33.png">
+                            </div>
+                            <div class="d-flex justify-content-center pt-2 text-white contact-info">
+                                <p>INTERPOL </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/images/image-34.png">
+                            </div>
+                            <div class="d-flex justify-content-center pt-2 text-white contact-info">
+                                <p>Rapid Action Battalian,<br /> Bangladesh </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- important links end -->
+    <!-- footer start -->
+    <div class="container-fluid" style="background-color: #040744;">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-md-4 col-lg-4 col-sm-6">
+                    <ul class="footer-top-list">
+                        <li><a href="/"><img src="../assets/images/railwayPolice-logo.png"
+                                    class="img-fluid me-3 text-white" />বাংলাদেশ রেলওয়ে
+                                পুলিশ</a></li>
+                        <li>
+                            Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna
+                            congue nec.
+                        </li>
+                        <li class="pt-3 text-white">
+                            <small>
+                                (219) 555-0114
+                                <span style="color: #618062"> or </span>
+                                Proxy@gmail.com
+                            </small>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-lg-2 col-6">
+                    <ul class="footer-top-list">
+                        <li>My Account</li>
+                        <li>My Account</li>
+                        <li>Order History</li>
+                        <li class="fs-6 text-white">Shoping Cart</li>
+                        <li>Wishlist</li>
+                        <li>Settings</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-lg-2 col-6">
+                    <ul class="footer-top-list">
+                        <li>Helps</li>
+                        <li>Contact</li>
+                        <li>Faqs</li>
+                        <li>Terms &amp; Condition</li>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-lg-2 col-6">
+                    <ul class="footer-top-list">
+                        <li>Proxy</li>
+                        <li>About</li>
+                        <li>Shop</li>
+                        <li>Product</li>
+                        <li>Products Details</li>
+                        <li>Track Order</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-lg-2 col-6">
+                    <ul class="footer-top-list">
+                        <li>Categories</li>
+                        <li>Fruit & Vegetables</li>
+                        <li>Meat & Fish</li>
+                        <li>Bread & Bakery</li>
+                        <li>Beauty & Health</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row border-top footer-bottom text-center py-2">
+                <p>Bangladesh Railway Police © 2023. All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+    <!-- footer end -->
+    <!-- bootstrap 5 main cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

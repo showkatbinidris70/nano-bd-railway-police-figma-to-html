@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&family=Poppins:wght@100;200;300;400;500;600;800&family=Work+Sans:wght@100;200;300;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&family=Poppins:wght@100;200;300;400;500;600;800&family=Roboto:ital@1&family=Work+Sans:wght@100;200;300;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <!-- bootstrap 5 css cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="" href="/assets/fonts/segoesc.ttf">
+
+    <!-- slick slider start  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- slick slider end -->
+    <!-- custom JS -->
+    <script src="/assets/js/main.js"></script>
+    <title>Bangladesh Railway Police</title>
+    <style>
+        .lightbox-img {
+            position: relative;
+            text-align: center;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .centered button {
+            border: none;
+            background: transparent;
+        }
+
+        .modal-content {
+            background: transparent;
+            border: none;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .modal-header {
+            background: transparent;
+            border: none;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- video start -->
+    <section class="container">
+        <div class="row">
+            <div class="lightbox-img">
+                <img src="./assets/images/lightbox-img.png" class="img-fluid" />
+                <div class="centered">
+                    <center>
+                        <p class="text-white pt-2" style="font-size: 12px;">Video</p>
+                        <h6 class="text-white fs-sm-6">Father of the Nation</h6>
+                        <h4 class="text-white fs-sm-6"> Bangabandhu Sheikh<br />Mujibur Rahman</h4>
+                        <button id="playme" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                            onclick="revealVideo('video','youtube')"><i
+                                class="fa-regular fa-circle-play fs-1 text-white p-2"></i></button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"><i
+                            class="fa-solid fa-xmark text-white fs-1"></i></button>
+                </div>
+                <div class="modal-body">
+                    <div id="video" class="lightbox" onclick="hideVideo('video','youtube')">
+                        <div class="video-container">
+                            <iframe id="youtube" src="https://www.youtube.com/embed/Wh0q8vdH-ro?si=9uHuSp02EK005Hfc"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <section>
+        <div id="video" class="container lightbox mt-5" onclick="hideVideo('video','youtube')">
+            <div class="lightbox-container">
+                <div class="lightbox-content">
+                    <button onclick="hideVideo('video','youtube')" class="lightbox-close" data-toggle="lightbox">
+                        <i class="fa-solid fa-xmark fs-1 lightbox-close-icon"></i>
+                    </button>
+                </div>
+                <div class="lightbox-fullscreen">
+                    <div class="video-container">
+                        <iframe id="youtube" src="https://www.youtube.com/embed/Wh0q8vdH-ro?si=9uHuSp02EK005Hfc"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <script>
+        // Function to reveal lightbox and adding YouTube autoplay
+        function revealVideo(div, video_id) {
+            var video = document.getElementById(video_id).src;
+            document.getElementById(video_id).src = video + '&autoplay=1'; // adding autoplay to the URL
+            document.getElementById(div).style.display = 'block';
+        }
+
+        // Hiding the lightbox and removing YouTube autoplay
+        function hideVideo(div, video_id) {
+            var video = document.getElementById(video_id).src;
+            var cleaned = video.replace('&autoplay=1', ''); // removing autoplay form url
+            document.getElementById(video_id).src = cleaned;
+            document.getElementById(div).style.display = 'none';
+        }
+    </script>
+    <!-- <div class="container-fluid">
+        <div class="container">
+            <div class="row reveal fade-bottom">
+                <iframe width="560" height="615" src="https://www.youtube.com/embed/Wh0q8vdH-ro?si=9uHuSp02EK005Hfc"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div> -->
+    <!-- video  end -->
+    <!-- bootstrap 5 main cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
